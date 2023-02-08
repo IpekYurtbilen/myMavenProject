@@ -26,5 +26,7 @@ public class SeleniumTest {
             System.out.println("verification is FAILED");
             System.out.println("actual title = " + actualTitle);
         }
+
+
     }
 }
