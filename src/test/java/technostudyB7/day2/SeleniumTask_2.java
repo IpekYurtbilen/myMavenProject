@@ -42,6 +42,7 @@ public class SeleniumTask_2 {
 
         driver.quit();
 
+
     }
 
 }
