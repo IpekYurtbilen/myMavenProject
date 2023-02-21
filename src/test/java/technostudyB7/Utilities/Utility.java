@@ -14,6 +14,16 @@ public class Utility {
         driver.manage().window().maximize();
     }
 
+public static void quitDriver(int time){
+    try {
+        Thread.sleep(time*1000);
+    } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+    }
+
+    driver.quit();
+}
+
 
 
 }

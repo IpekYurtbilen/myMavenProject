@@ -2,7 +2,9 @@ package technostudyB7.day6;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import technostudyB7.Utilities.Utility;
 
 import java.util.concurrent.TimeUnit;
@@ -48,18 +50,25 @@ public class Homework extends Utility {
         WebElement password = driver.findElement(By.xpath("//input[@placeholder='Password']"));
         password.sendKeys("asdqwe");
 
-        WebElement accountType = driver.findElement(By.xpath("//span[@class='select2-selection select2-selection--single']"));
-        accountType.click();
+//        WebElement accountType = driver.findElement(By.xpath("//span[@class='select2-selection select2-selection--single']"));
+//        accountType.click();
+//
+//        WebElement agent = driver.findElement(By.xpath("//li[text()='Agent']"));
+//        agent.click();
 
-
-        WebElement agent = driver.findElement(By.xpath("//li[text()='Agent']"));
-        agent.click();
-
-//        WebElement robotButton = driver.findElement();
+//        WebElement robotButton = driver.findElement(By.id("recaptcha-anchor"));
 //        robotButton.click();
 
-//        WebElement signUp = driver.findElement(By.xpath("//span[text()='Signup']"));
-//        signUp.click();
+        WebElement cookiesButton = driver.findElement(By.id("cookie_stop"));
+        cookiesButton.click();
+
+        WebElement signUp = driver.findElement(By.xpath("//button[@type='submit']"));
+
+        WebDriverWait wait = new WebDriverWait(driver,60);
+        wait.until(ExpectedConditions.elementToBeClickable(signUp));
+
+        signUp.click();
+
 
 
     }
